@@ -6,45 +6,42 @@ export function useSteppedForm() {
   const [formData, setFormData] = useState<FormData>({});
   const [errors, setErrors] = useState<ValidationErrors>({});
 
-  // TODO: Implement form data updates
   const updateFormData = (stepData: Partial<FormData>) => {
-    // Hint: Merge stepData with existing formData
+    // TODO: Merge new data with existing form data
     console.log('TODO: Update form data', stepData);
   };
 
-  // TODO: Implement validation logic for each step
   const validateStep = (step: StepId): boolean => {
-    // Hint: Check required fields, formats, etc.
+    // TODO: Validate step 1 (name and email)
     // Return true if valid, false if invalid
-    // Update errors state with validation messages
+    // Update errors state if invalid
     console.log('TODO: Validate step', step);
-    return true; // Placeholder - always returns true
+    return true;
   };
 
-  // TODO: Implement step navigation with validation
   const goToNextStep = () => {
     if (validateStep(currentStep)) {
-      if (currentStep < 4) {
-        setCurrentStep((currentStep + 1) as StepId);
+      if (currentStep < 2) {
+        setCurrentStep(2);
       }
     }
   };
 
   const goToPreviousStep = () => {
     if (currentStep > 1) {
-      setCurrentStep((currentStep - 1) as StepId);
+      setCurrentStep(1);
     }
   };
 
   const goToStep = (step: StepId) => {
-    // TODO: Add validation logic - should we allow jumping to any step?
     setCurrentStep(step);
   };
 
-  // TODO: Implement form submission
   const submitForm = () => {
-    console.log('TODO: Submit form', formData);
-    // Hint: Validate all steps, then handle submission
+    if (validateStep(2)) {
+      console.log('Form submitted:', formData);
+      // TODO: Handle successful submission (show success message, etc.)
+    }
   };
 
   return {

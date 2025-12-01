@@ -1,8 +1,6 @@
 import { useSteppedForm } from './hooks/useSteppedForm';
 import { StepIndicator } from './components/StepIndicator';
 import { PersonalInfo } from './components/PersonalInfo';
-import { Address } from './components/Address';
-import { Preferences } from './components/Preferences';
 import { Review } from './components/Review';
 
 function App() {
@@ -28,22 +26,6 @@ function App() {
           />
         );
       case 2:
-        return (
-          <Address
-            data={formData}
-            errors={errors}
-            onChange={updateFormData}
-          />
-        );
-      case 3:
-        return (
-          <Preferences
-            data={formData}
-            errors={errors}
-            onChange={updateFormData}
-          />
-        );
-      case 4:
         return <Review data={formData} onEdit={goToStep} />;
       default:
         return null;
@@ -52,7 +34,6 @@ function App() {
 
   const handleSubmit = () => {
     submitForm();
-    // TODO: Show success message, redirect, etc.
   };
 
   return (
@@ -81,7 +62,7 @@ function App() {
               Back
             </button>
 
-            {currentStep < 4 ? (
+            {currentStep < 2 ? (
               <button
                 onClick={goToNextStep}
                 className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
@@ -100,7 +81,7 @@ function App() {
         </div>
 
         <div className="mt-6 text-center text-sm text-gray-500">
-          <p>Step {currentStep} of 4</p>
+          <p>Step {currentStep} of 2</p>
         </div>
       </div>
     </div>

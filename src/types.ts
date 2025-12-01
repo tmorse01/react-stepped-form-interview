@@ -1,19 +1,13 @@
 export interface FormData {
-  // TODO: Define your form data structure here
-  // Example:
-  // personalInfo: {
-  //   firstName: string;
-  //   lastName: string;
-  //   email: string;
-  //   phone: string;
-  // };
-  // address: { ... };
-  // preferences: { ... };
+  // TODO: Define your form data structure
+  // Examples:
+  // name?: string;
+  // email?: string;
 }
 
-export type StepId = 1 | 2 | 3 | 4;
+export type StepId = 1 | 2;
 
 export interface ValidationErrors {
-  // TODO: Define validation error structure
-  // Example: Record<string, string> or more specific types
+  // TODO: Define validation errors for each field
+  // Example: name?: string; email?: string;
 }

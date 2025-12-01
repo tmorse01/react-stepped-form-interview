@@ -1,144 +1,93 @@
-# React Stepped Form - Interview Challenge
+# React Stepped Form - 30-Minute Interview Challenge
 
-Welcome! This is a take-home interview project designed to assess your React, TypeScript, and front-end development skills.
+Welcome! This is a timed interview project to assess your React and TypeScript fundamentals.
 
-## Task Overview
+## Challenge: Build a 2-Step Form
 
-Your task is to complete a **multi-step form wizard** with the following steps:
+Your task is to implement a **simple 2-step form** with the following:
 
-1. **Personal Info** - Name, Email, Phone
-2. **Address** - Street, City, State, Zip Code
-3. **Preferences** - Newsletter subscription, Communication preferences
-4. **Review & Submit** - Display all entered data for final review
+1. **Step 1 - Personal Info**
+   - Name (required, min 2 chars)
+   - Email (required, valid format)
 
-## Requirements
+2. **Step 2 - Review & Submit**
+   - Display the data from Step 1
+   - Submit button to show a success message
 
-### Core Functionality (Required)
+## Core Requirements (Focus on These)
 
-- [ ] **Step Navigation**: Users should be able to move forward/backward through steps
-- [ ] **Data Persistence**: Form data must persist when navigating between steps
-- [ ] **Form Validation**: Each step should validate its inputs before allowing progression
-- [ ] **Step Indicator**: Visual indicator showing current step and progress
-- [ ] **Review Step**: Display all collected data in a read-only format
-- [ ] **Submit Handler**: Handle form submission (console.log is sufficient)
+- [ ] **Form Fields**: Implement input fields in PersonalInfo component
+- [ ] **Data Persistence**: Form data must survive navigation between steps
+- [ ] **Validation**: Show error messages if fields are empty or invalid
+- [ ] **Step Navigation**: Next/Back buttons work correctly
+- [ ] **Review Display**: Show collected data on final step
+- [ ] **Submit Handler**: Log submission to console
 
-### Technical Requirements
+## Technical Requirements
 
-- [ ] Use TypeScript with proper typing (no `any` types)
-- [ ] Define a clear interface for form data in `src/types.ts`
-- [ ] Implement form state management in `src/hooks/useSteppedForm.ts`
-- [ ] Add validation logic before step transitions
-- [ ] Ensure the UI is responsive and works on mobile devices
-
-### Form Fields Specification
-
-**Step 1 - Personal Info**
-- First Name (required, min 2 characters)
-- Last Name (required, min 2 characters)
-- Email (required, valid email format)
-- Phone (required, valid format)
-
-**Step 2 - Address**
-- Street Address (required)
-- City (required)
-- State (required, dropdown or text)
-- Zip Code (required, 5 digits)
-
-**Step 3 - Preferences**
-- Subscribe to newsletter (checkbox)
-- Preferred contact method (radio: Email, Phone, SMS)
-- Receive promotional offers (checkbox)
-
-**Step 4 - Review & Submit**
-- Display all data from previous steps
-- Allow editing (navigate back to specific steps)
-- Submit button to complete the process
+- [ ] Use TypeScript (define types in `src/types.ts`)
+- [ ] Implement state management in `src/hooks/useSteppedForm.ts`
+- [ ] Wire up form components to hook
+- [ ] No runtime errors when building (`npm run build`)
 
 ## Getting Started
 
-### Installation
+### Installation & Run
 
 ```bash
 npm install
-```
-
-### Development
-
-```bash
 npm run dev
 ```
 
 The app will be available at `http://localhost:5173`
 
-### Build
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-## Project Structure
+## What We're Evaluating
+
+- **React Fundamentals**: Can you manage component state and props effectively?
+- **TypeScript**: Do you define and use types correctly?
+- **Problem-Solving**: How do you approach form state and validation?
+- **Code Organization**: Is your code readable and maintainable?
+- **Attention to Detail**: Does it work without errors?
+
+## File Structure
+
+Key files to modify:
 
 ```
 src/
-├── main.tsx              # App entry point
-├── App.tsx               # Main app component (step orchestration)
+├── types.ts                  # Define your form data interface
+├── hooks/useSteppedForm.ts   # Manage form state and validation
 ├── components/
-│   ├── StepIndicator.tsx # Step progress indicator
-│   ├── PersonalInfo.tsx  # TODO: Implement Step 1
-│   ├── Address.tsx       # TODO: Implement Step 2
-│   ├── Preferences.tsx   # TODO: Implement Step 3
-│   └── Review.tsx        # TODO: Implement Step 4
-├── hooks/
-│   └── useSteppedForm.ts # TODO: Complete form state management
-├── types.ts              # TODO: Define TypeScript interfaces
-└── styles.css            # Global styles
+│   ├── PersonalInfo.tsx      # Form fields for step 1
+│   ├── Review.tsx            # Display data and submit
+│   └── StepIndicator.tsx     # Already implemented
+└── App.tsx                   # Already wired up
 ```
 
-## What We're Looking For
+## Tips
 
-- **Code Quality**: Clean, readable, maintainable code
-- **TypeScript Proficiency**: Proper use of types and interfaces
-- **React Best Practices**: Hooks, component composition, state management
-- **User Experience**: Smooth interactions, clear error messages, helpful feedback
-- **Problem Solving**: How you approach validation, state management, and edge cases
+- Start with `types.ts` - define what your form data looks like
+- Then implement `useSteppedForm.ts` - manage state and validation
+- Finally fill in the component fields
+- Test as you go - use the browser console to debug
+- The UI scaffold is already in place - focus on the logic
 
-## Bonus Points (Optional)
+## Bonus (If Time Allows)
 
-These are not required but will help you stand out:
+- Add more fields to PersonalInfo (phone, company, etc.)
+- Add a third step (Address)
+- Persist data to localStorage
+- Better validation messages
+- Edit functionality on the Review step
 
-- [ ] **Advanced Type Safety**: Generic types, type guards, discriminated unions
-- [ ] **URL Synchronization**: Sync current step with URL query params (`?step=2`)
-- [ ] **Accessibility**: ARIA labels, keyboard navigation, focus management
-- [ ] **Enhanced UX**: Loading states, transitions, better error handling
-- [ ] **State Management**: useReducer or Context API for complex state
-- [ ] **Form Field Components**: Reusable input components with built-in validation
-- [ ] **Local Storage**: Persist form data across page refreshes
-- [ ] **Progressive Enhancement**: Save draft functionality, auto-save
+## Time Limit
 
-## Evaluation Criteria
+You have **30 minutes** to implement the core requirements above. Quality over completeness - working code is better than unfinished code.
 
-Your submission will be evaluated on:
-
-1. **Functionality** (40%) - Does it work as specified?
-2. **Code Quality** (30%) - Is the code clean, organized, and maintainable?
-3. **TypeScript Usage** (15%) - Are types used effectively?
-4. **User Experience** (15%) - Is the interface intuitive and polished?
-
-## Time Expectation
-
-This challenge should take approximately **2-3 hours** to complete the core requirements. Feel free to spend additional time on bonus features if you'd like to showcase more skills.
-
-## Submission
-
-When you're done:
-
-1. Ensure the project builds without errors (`npm run build`)
-2. Test all functionality thoroughly
-3. Add any additional notes or decisions in a `NOTES.md` file (optional)
-4. Submit your completed code as instructed
-
-## Questions?
-
-If you have any questions about the requirements, feel free to reach out. We want you to succeed!
-
-Good luck! 🚀
+Good luck!

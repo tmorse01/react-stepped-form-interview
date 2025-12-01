@@ -7,9 +7,7 @@ interface StepIndicatorProps {
 
 const steps = [
   { id: 1 as StepId, label: 'Personal Info' },
-  { id: 2 as StepId, label: 'Address' },
-  { id: 3 as StepId, label: 'Preferences' },
-  { id: 4 as StepId, label: 'Review' },
+  { id: 2 as StepId, label: 'Review' },
 ];
 
 export function StepIndicator({ currentStep, onStepClick }: StepIndicatorProps) {
