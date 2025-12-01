@@ -5,7 +5,7 @@ interface ReviewProps {
   onEdit: (step: 1 | 2 | 3) => void;
 }
 
-export function Review({ data, onEdit }: ReviewProps) {
+export function Review({ data: _data, onEdit }: ReviewProps) {
   return (
     <div className="space-y-6">
       <h2 className="mb-6 text-2xl font-bold">Review Your Information</h2>

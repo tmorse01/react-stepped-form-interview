@@ -1,12 +1,16 @@
-import { FormData } from "../types";
+import { FormData, ValidationErrors } from "../types";
 
 interface AddressProps {
   data: FormData;
-  errors: Record<string, string>;
+  errors: ValidationErrors;
   onChange: (data: Partial<FormData>) => void;
 }
 
-export function Address({ data, errors, onChange }: AddressProps) {
+export function Address({
+  data: _data,
+  errors: _errors,
+  onChange: _onChange,
+}: AddressProps) {
   return (
     <div className="space-y-4">
       <h2 className="text-2xl font-bold mb-6">Address Information</h2>

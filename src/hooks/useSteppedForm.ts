@@ -3,8 +3,8 @@ import { FormData, StepId, ValidationErrors } from "../types";
 
 export function useSteppedForm() {
   const [currentStep, setCurrentStep] = useState<StepId>(1);
-  const [formData, setFormData] = useState<FormData>({});
-  const [errors, setErrors] = useState<ValidationErrors>({});
+  const [formData, _setFormData] = useState<FormData>({});
+  const [errors, _setErrors] = useState<ValidationErrors>({});
 
   const updateFormData = (stepData: Partial<FormData>) => {
     // TODO: Merge new data with existing form data
