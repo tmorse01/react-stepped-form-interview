@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { FormData, StepId, ValidationErrors } from '../types';
+import { useState } from "react";
+import { FormData, StepId, ValidationErrors } from "../types";
 
 export function useSteppedForm() {
   const [currentStep, setCurrentStep] = useState<StepId>(1);
@@ -8,28 +8,28 @@ export function useSteppedForm() {
 
   const updateFormData = (stepData: Partial<FormData>) => {
     // TODO: Merge new data with existing form data
-    console.log('TODO: Update form data', stepData);
+    console.log("TODO: Update form data", stepData);
   };
 
   const validateStep = (step: StepId): boolean => {
     // TODO: Validate step 1 (name and email)
     // Return true if valid, false if invalid
     // Update errors state if invalid
-    console.log('TODO: Validate step', step);
+    console.log("TODO: Validate step", step);
     return true;
   };
 
   const goToNextStep = () => {
     if (validateStep(currentStep)) {
-      if (currentStep < 2) {
-        setCurrentStep(2);
+      if (currentStep < 3) {
+        setCurrentStep((currentStep + 1) as StepId);
       }
     }
   };
 
   const goToPreviousStep = () => {
     if (currentStep > 1) {
-      setCurrentStep(1);
+      setCurrentStep((currentStep - 1) as StepId);
     }
   };
 
@@ -38,8 +38,8 @@ export function useSteppedForm() {
   };
 
   const submitForm = () => {
-    if (validateStep(2)) {
-      console.log('Form submitted:', formData);
+    if (validateStep(3)) {
+      console.log("Form submitted:", formData);
       // TODO: Handle successful submission (show success message, etc.)
     }
   };

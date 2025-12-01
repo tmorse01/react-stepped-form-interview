@@ -5,7 +5,7 @@ export interface FormData {
   // email?: string;
 }
 
-export type StepId = 1 | 2;
+export type StepId = 1 | 2 | 3;
 
 export interface ValidationErrors {
   // TODO: Define validation errors for each field

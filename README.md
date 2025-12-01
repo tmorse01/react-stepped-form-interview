@@ -2,21 +2,29 @@
 
 Welcome! This is a timed interview project to assess your React and TypeScript fundamentals.
 
-## Challenge: Build a 2-Step Form
+## Challenge: Build a 3-Step Form
 
-Your task is to implement a **simple 2-step form** with the following:
+Your task is to implement a **simple 3-step form** with the following:
 
 1. **Step 1 - Personal Info**
+
    - Name (required, min 2 chars)
    - Email (required, valid format)
 
-2. **Step 2 - Review & Submit**
-   - Display the data from Step 1
+2. **Step 2 - Address**
+
+   - Street (required)
+   - City (required)
+   - State (required)
+   - Zip Code (required, valid 5-digit format)
+
+3. **Step 3 - Review & Submit**
+   - Display the data from Steps 1 & 2
    - Submit button to show a success message
 
 ## Core Requirements (Focus on These)
 
-- [ ] **Form Fields**: Implement input fields in PersonalInfo component
+- [ ] **Form Fields**: Implement input fields in PersonalInfo and Address components
 - [ ] **Data Persistence**: Form data must survive navigation between steps
 - [ ] **Validation**: Show error messages if fields are empty or invalid
 - [ ] **Step Navigation**: Next/Back buttons work correctly
@@ -65,6 +73,7 @@ src/
 ├── hooks/useSteppedForm.ts   # Manage form state and validation
 ├── components/
 │   ├── PersonalInfo.tsx      # Form fields for step 1
+│   ├── Address.tsx           # Form fields for step 2
 │   ├── Review.tsx            # Display data and submit
 │   └── StepIndicator.tsx     # Already implemented
 └── App.tsx                   # Already wired up
@@ -80,8 +89,8 @@ src/
 
 ## Bonus (If Time Allows)
 
-- Add more fields to PersonalInfo (phone, company, etc.)
-- Add a third step (Address)
+- Add phone field to PersonalInfo
+- Add apartment/unit number to Address
 - Persist data to localStorage
 - Better validation messages
 - Edit functionality on the Review step
